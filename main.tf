@@ -1,9 +1,8 @@
-resource "aws_vpc_dhcp_options" "dhcp" {
-  domain_name         = "${var.vpc_dhcp_domain_name}"
-  domain_name_servers = "${var.vpc_dhcp_domain_name_servers}"
-  ntp_servers         = "${var.vpc_dhcp_ntp_servers}"
+resource "aws_vpc_dhcp_options" "main" {
+  domain_name         = "${var.domain_name}"
+  domain_name_servers = "${var.domain_name_servers}"
+  ntp_servers         = "${var.ntp_servers}"
+  tags                = "${var.tags}"
 
-  tags {
-    Name = "${var.vpc_dhcp_tag_name}"
-  }
+  # lifecycle           = "${var.lifecycle}"
 }

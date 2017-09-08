@@ -16,10 +16,10 @@ module "aws_iam_alias" {
 module "aws_vpc_dhcp" {
   source = "github.com/ellerbrock/tf-aws-vpc-dhcp"
   
-  vpc_dhcp_domain_name         = "github.com"
-  vpc_dhcp_domain_name_servers = ["10.20.30.40", "10.20.30.50"]
-  vpc_dhcp_ntp_servers         = ["10.20.30.40", "10.20.30.50"]
-  vpc_dhcp_tag_name            = "${module.aws_iam_alias.account_id}"
+  domain_name         = "domain.tld"
+  domain_name_servers = ["10.20.30.40", "10.20.30.50"]
+  ntp_servers         = ["10.20.30.40", "10.20.30.50"]
+  tag_name            = "${module.aws_iam_alias.account_id}"
 }
 ```
 

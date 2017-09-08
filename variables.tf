@@ -1,17 +1,24 @@
-variable "vpc_dhcp_domain_name" {
+variable "domain_name" {
   description = "domainname"
+  default     = ""
 }
 
-variable "vpc_dhcp_domain_name_servers" {
+variable "domain_name_servers" {
   description = "dns server"
-  type        = "list"
+  default     = []
 }
 
-variable "vpc_dhcp_ntp_servers" {
+variable "ntp_servers" {
   description = "ntp server"
-  type        = "list"
+  default     = []
 }
 
-variable "vpc_dhcp_tag_name" {
-  description = "Tag"
+variable "tags" {
+  description = "tags"
+  default     = {}
+}
+
+variable "lifecycle" {
+  description = "lifecycle"
+  default     = {}
 }
